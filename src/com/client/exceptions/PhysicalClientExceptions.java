@@ -8,13 +8,13 @@ public class PhysicalClientExceptions
     {
         public PhysicalClientException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidCpfException extends PhysicalClientException
     {
-        static String MESSAGE = "\nCPF inválido\n";
+        static final String MESSAGE = "CPF inválido";
 
         public InvalidCpfException()
         {
@@ -24,7 +24,7 @@ public class PhysicalClientExceptions
 
     public static class InvalidBirthDateException extends PhysicalClientException
     {
-        static String MESSAGE = "\nData de nascimento inválida\n";
+        static final String MESSAGE = "Data de nascimento inválida";
 
         public InvalidBirthDateException()
         {

@@ -6,13 +6,13 @@ public class ClientExceptions
     {
         public ClientException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidNameException extends ClientException
     {
-        static String MESSAGE = "\nNome inválido\n";
+        static final String MESSAGE = "Nome inválido";
 
         public InvalidNameException()
         {
@@ -22,7 +22,7 @@ public class ClientExceptions
 
     public static class InvalidAddressException extends ClientException
     {
-        static String MESSAGE = "\nEndereço inválido\n";
+        static final String MESSAGE = "Endereço inválido";
 
         public InvalidAddressException()
         {
@@ -32,7 +32,7 @@ public class ClientExceptions
 
     public static class InvalidPhoneException extends ClientException
     {
-        static String MESSAGE = "\nTelefone inválido\n";
+        static final String MESSAGE = "Telefone inválido";
 
         public InvalidPhoneException()
         {
@@ -42,7 +42,7 @@ public class ClientExceptions
 
     public static class InvalidEmailException extends ClientException
     {
-        static String MESSAGE = "\nEmail inválido\n";
+        static final String MESSAGE = "Email inválido";
 
         public InvalidEmailException()
         {
@@ -52,7 +52,7 @@ public class ClientExceptions
 
     public static class InvalidPasswordException extends ClientException
     {
-        static String MESSAGE = "\nSenha inválida\n";
+        static final String MESSAGE = "Senha inválida";
 
         public InvalidPasswordException()
         {

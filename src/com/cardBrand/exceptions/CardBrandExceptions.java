@@ -6,13 +6,13 @@ public class CardBrandExceptions
     {
         public CardBrandException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidNameException extends CardBrandException
     {
-        static String MESSAGE = "\nNome inválido\n";
+        static final String MESSAGE = "Nome inválido";
 
         public InvalidNameException()
         {
@@ -22,7 +22,7 @@ public class CardBrandExceptions
 
     public static class InvalidCnpjException extends CardBrandException
     {
-        static String MESSAGE = "\nCnpj inválido\n";
+        static final String MESSAGE = "Cnpj inválido";
 
         public InvalidCnpjException()
         {
@@ -32,7 +32,7 @@ public class CardBrandExceptions
 
     public static class InvalidNumberLengthException extends CardBrandException
     {
-        static String MESSAGE = "\nTamanho de número de cartão inválido\n";
+        static final String MESSAGE = "Tamanho de número de cartão inválido";
 
         public InvalidNumberLengthException()
         {
@@ -42,7 +42,7 @@ public class CardBrandExceptions
 
     public static class InvalidCvvLengthException extends CardBrandException
     {
-        static String MESSAGE = "\nTamanho de cvv de cartão inválido\n";
+        static final String MESSAGE = "Tamanho de cvv de cartão inválido";
 
         public InvalidCvvLengthException()
         {

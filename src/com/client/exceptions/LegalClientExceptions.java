@@ -8,13 +8,13 @@ public class LegalClientExceptions
     {
         public LegalClientException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidCnpjException extends LegalClientException
     {
-        static String MESSAGE = "\nCNPJ inválido\n";
+        static final String MESSAGE = "CNPJ inválido";
 
         public InvalidCnpjException()
         {

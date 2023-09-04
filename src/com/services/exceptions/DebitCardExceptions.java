@@ -8,13 +8,13 @@ public class DebitCardExceptions
     {
         public DebitCardException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class invalidDailyLimitException extends DebitCardException
     {
-        static String MESSAGE = "\nLimite diário inválido\n";
+        static final String MESSAGE = "\nLimite diário inválido\n";
 
         public invalidDailyLimitException()
         {

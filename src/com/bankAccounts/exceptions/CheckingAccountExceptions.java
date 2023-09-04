@@ -8,13 +8,13 @@ public class CheckingAccountExceptions
     {
         public CheckingAccountException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidLimitException extends CheckingAccountException
     {
-        static String MESSAGE = "\nLimite inválido\n";
+        static final String MESSAGE = "Limite inválido";
 
         public InvalidLimitException()
         {

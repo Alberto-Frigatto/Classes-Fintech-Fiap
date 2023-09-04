@@ -8,13 +8,13 @@ public class CardExceptions
     {
         public CardException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidNumberException extends CardException
     {
-        static String MESSAGE = "\nNúmero inválido\n";
+        static final String MESSAGE = "Número inválido";
 
         public InvalidNumberException()
         {
@@ -24,7 +24,7 @@ public class CardExceptions
 
     public static class InvalidPasswordException extends CardException
     {
-        static String MESSAGE = "\nSenha inválida\n";
+        static final String MESSAGE = "Senha inválida";
 
         public InvalidPasswordException()
         {
@@ -34,7 +34,7 @@ public class CardExceptions
 
     public static class InvalidValidityException extends CardException
     {
-        static String MESSAGE = "\nValidade inválida\n";
+        static final String MESSAGE = "Validade inválida";
 
         public InvalidValidityException()
         {
@@ -44,7 +44,7 @@ public class CardExceptions
 
     public static class InvalidCvvException extends CardException
     {
-        static String MESSAGE = "\nCvv inválido\n";
+        static final String MESSAGE = "Cvv inválido";
 
         public InvalidCvvException()
         {
@@ -54,7 +54,7 @@ public class CardExceptions
 
     public static class InvalidAnnualFeeException extends CardException
     {
-        static String MESSAGE = "\nAnuidade inválida\n";
+        static final String MESSAGE = "Anuidade inválida";
 
         public InvalidAnnualFeeException()
         {

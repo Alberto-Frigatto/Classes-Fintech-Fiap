@@ -6,13 +6,13 @@ public class BankAccountExceptions
     {
         public BankAccountException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidNumberException extends BankAccountException
     {
-        static String MESSAGE = "\nNúmero da conta inválido\n";
+        static final String MESSAGE = "Número da conta inválido";
 
         public InvalidNumberException()
         {
@@ -22,7 +22,7 @@ public class BankAccountExceptions
 
     public static class InvalidBranchException extends BankAccountException
     {
-        static String MESSAGE = "\nAgência inválida\n";
+        static final String MESSAGE = "Agência inválida";
 
         public InvalidBranchException()
         {
@@ -32,7 +32,7 @@ public class BankAccountExceptions
 
     public static class InvalidTransactionException extends BankAccountException
     {
-        static String MESSAGE = "\nTransação não permitida\n";
+        static final String MESSAGE = "Transação não permitida";
 
         public InvalidTransactionException()
         {

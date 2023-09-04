@@ -8,13 +8,13 @@ public class CreditCardExceptions
     {
         public CreditCardException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class invalidLimitException extends CreditCardException
     {
-        static String MESSAGE = "\nLimite inválido\n";
+        static final String MESSAGE = "Limite inválido";
 
         public invalidLimitException()
         {

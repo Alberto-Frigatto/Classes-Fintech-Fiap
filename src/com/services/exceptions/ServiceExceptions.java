@@ -6,13 +6,13 @@ public class ServiceExceptions
     {
         public ServiceException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     public static class InvalidServiceFeeException extends ServiceException
     {
-        static String MESSAGE = "\nTaxa de serviço inválida\n";
+        static final String MESSAGE = "Taxa de serviço inválida";
 
         public InvalidServiceFeeException()
         {
