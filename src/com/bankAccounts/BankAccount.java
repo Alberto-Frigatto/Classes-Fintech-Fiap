@@ -127,7 +127,7 @@ public abstract class BankAccount
 		return this.balance;
 	}
 	
-	protected void setBalance(double balance)
+	public void setBalance(double balance)
 	{
 		this.balance = balance;
     }
