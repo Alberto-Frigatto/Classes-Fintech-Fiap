@@ -22,6 +22,7 @@ public abstract class Card extends Service
     private String cvv;
     private float monthlyLimit;
     private float annualFee;
+    private boolean isActive = true;
 
     public Card(
         float serviceFee,
@@ -175,6 +176,12 @@ public abstract class Card extends Service
         return this.annualFee >= 0 && this.annualFee <= 5e2;
     }
 
+    public void blockCard()
+    {
+        if (this.isActive)
+            this.isActive = false;
+    }
+
     public KindCard getKindCard()
     {
       return this.kindCard;
@@ -213,5 +220,10 @@ public abstract class Card extends Service
     public float getAnnualFee()
     {
       return this.annualFee;
+    }
+
+    public boolean getIsActive()
+    {
+      return this.isActive;
     }
 }
