@@ -182,6 +182,14 @@ public abstract class Card extends Service
             this.isActive = false;
     }
 
+    public void payAnnualFee()
+    {
+        BankAccount account = this.getBankAccount();
+        double accountBalance = account.getBalance();
+
+        account.setBalance(accountBalance - this.annualFee);
+    }
+
     public KindCard getKindCard()
     {
       return this.kindCard;
