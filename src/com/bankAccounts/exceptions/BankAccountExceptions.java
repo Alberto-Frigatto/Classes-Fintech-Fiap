@@ -39,4 +39,14 @@ public class BankAccountExceptions
             super(MESSAGE);
         }
     }
+
+    public static class InvalidOwnerAddictionException extends BankAccountException
+    {
+        static final String MESSAGE = "Já há 2 titulares na conta";
+
+        public InvalidOwnerAddictionException()
+        {
+            super(MESSAGE);
+        }
+    }
 }
