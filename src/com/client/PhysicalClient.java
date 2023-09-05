@@ -67,7 +67,7 @@ public class PhysicalClient extends Client
 
         this.birthDate = LocalDate.parse(birthDate);
 
-        if (!isOfLegalAge(this.birthDate))
+        if (!this.isOfLegalAge(this.birthDate))
             throw new PhysicalClientExceptions.InvalidBirthDateException();
     }
 
