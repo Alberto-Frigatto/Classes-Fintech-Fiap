@@ -75,12 +75,12 @@ public abstract class BankAccount
     }
 
     public void deposit(double value) throws BankAccountExceptions.InvalidTransactionException
-	{
+    {
         if (!transactionValueIsValid(value))
             throw new BankAccountExceptions.InvalidTransactionException();
 
-		this.balance += value;
-	}
+        this.balance += value;
+    }
 
     private boolean transactionValueIsValid(double value)
     {
@@ -88,21 +88,21 @@ public abstract class BankAccount
     }
     
     public void draft(double value) throws BankAccountExceptions.InvalidTransactionException
-	{
+    {
         if (!this.transactionIsPossible(value) || !this.transactionValueIsValid(value))
             throw new BankAccountExceptions.InvalidTransactionException();
         
-		this.balance -= value;
-	}
+        this.balance -= value;
+    }
     
     public void transfer(double value, BankAccount account) throws BankAccountExceptions.InvalidTransactionException
-	{
+    {
         if (!this.transactionIsPossible(value) || !this.transactionValueIsValid(value))
             throw new BankAccountExceptions.InvalidTransactionException();
         
-		this.draft(value);
-		account.deposit(value);
-	}
+        this.draft(value);
+        account.deposit(value);
+    }
 
     abstract protected boolean transactionIsPossible(double value);
 
@@ -113,39 +113,39 @@ public abstract class BankAccount
     }
 
     public String getBranch()
-	{
-		return this.branch;
-	}
-	
-	public String getNumber()
-	{
-		return this.number;
-	}
-	
-	public double getBalance()
-	{
-		return this.balance;
-	}
-	
-	public void setBalance(double balance)
-	{
-		this.balance = balance;
+    {
+        return this.branch;
     }
-	
-	public Client getOwner()
-	{
-		return this.owner;
-	}
-	
-	public KindAccount getkindAccount()
-	{
-		return this.kindAccount;
-	}
-	
-	public Bank getBank()
-	{
-		return this.bank;
-	}
+    
+    public String getNumber()
+    {
+        return this.number;
+    }
+    
+    public double getBalance()
+    {
+        return this.balance;
+    }
+    
+    public void setBalance(double balance)
+    {
+        this.balance = balance;
+    }
+    
+    public Client getOwner()
+    {
+        return this.owner;
+    }
+    
+    public KindAccount getkindAccount()
+    {
+        return this.kindAccount;
+    }
+    
+    public Bank getBank()
+    {
+        return this.bank;
+    }
     
     public boolean getIsActive()
     {
