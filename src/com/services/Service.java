@@ -23,7 +23,7 @@ public abstract class Service
     public static enum KindService
     {
         LOAN,
-        INVESTIMENT,
+        INVESTMENT,
         CARD,
         PAYMENT
     }
