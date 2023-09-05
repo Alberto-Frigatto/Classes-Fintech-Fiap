@@ -8,12 +8,15 @@ import com.bankAccounts.exceptions.BankAccountExceptions;
 import com.bankAccounts.exceptions.BankAccountExceptions.BankAccountException;
 import com.client.Client;
 import com.client.PhysicalClient;
+import com.debit.AutomaticDebit;
+import com.debit.Debit;
 import com.jointAccount.JointAccount;
 
-public class SavingsAccount extends BankAccount implements JointAccount
+public class SavingsAccount extends BankAccount implements JointAccount, AutomaticDebit
 {
     private float incomeRate = .0551f;
     private ArrayList<Client> owners = new ArrayList<>();
+    private ArrayList<Debit> automaticDebits = new ArrayList<>();
 
     public SavingsAccount(Client owner, Bank bank, String number, String branch) throws BankAccountException
     {
@@ -69,9 +72,30 @@ public class SavingsAccount extends BankAccount implements JointAccount
         return this.owners.size() < 2 && owner != this.getOwner();
     }
 
-    
+    @Override
+    public void includeAutomaticDebit(Debit debit)
+    {
+        this.automaticDebits.add(debit);
+    }
+
+    @Override
+    public void payAutomaticDebits()
+    {
+        double totalValue = 0;
+
+        for (Debit automaticDebit : this.automaticDebits)
+            totalValue += automaticDebit.getValue();
+
+        this.setBalance(this.getBalance() - totalValue);
+    }
+
     public ArrayList<Client> getOwners()
     {
       return this.owners;
+    }
+
+    public ArrayList<Debit> getAutomaticDebits()
+    {
+      return this.automaticDebits;
     }
 }
