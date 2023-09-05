@@ -33,7 +33,6 @@ public class Loan extends Service
         this.setEndDateIfValid(endDate);
         this.setPortions();
         this.setPortionValue();
-
         this.depositValue();
     }
 
