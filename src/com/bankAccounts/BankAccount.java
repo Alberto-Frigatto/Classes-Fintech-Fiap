@@ -74,7 +74,7 @@ public abstract class BankAccount
         return true;
     }
 
-    public void deposit(int value) throws BankAccountExceptions.InvalidTransactionException
+    public void deposit(double value) throws BankAccountExceptions.InvalidTransactionException
 	{
         if (!transactionValueIsValid(value))
             throw new BankAccountExceptions.InvalidTransactionException();
@@ -87,7 +87,7 @@ public abstract class BankAccount
         return value > 0;
     }
     
-    public void draft(int value) throws BankAccountExceptions.InvalidTransactionException
+    public void draft(double value) throws BankAccountExceptions.InvalidTransactionException
 	{
         if (!this.transactionIsPossible(value) || !this.transactionValueIsValid(value))
             throw new BankAccountExceptions.InvalidTransactionException();
@@ -95,7 +95,7 @@ public abstract class BankAccount
 		this.balance -= value;
 	}
     
-    public void transfer(int value, BankAccount account) throws BankAccountExceptions.InvalidTransactionException
+    public void transfer(double value, BankAccount account) throws BankAccountExceptions.InvalidTransactionException
 	{
         if (!this.transactionIsPossible(value) || !this.transactionValueIsValid(value))
             throw new BankAccountExceptions.InvalidTransactionException();
