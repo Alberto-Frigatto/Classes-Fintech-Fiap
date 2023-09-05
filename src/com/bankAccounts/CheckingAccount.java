@@ -55,6 +55,7 @@ public class CheckingAccount extends BankAccount implements JointAccount
         return this.owners.size() < 2 && owner != this.getOwner();
     }
 
+    @Override
     public void getData()
     {
         System.out.println("\nTITULAR: " + this.getOwner().getName());

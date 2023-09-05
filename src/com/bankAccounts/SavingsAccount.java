@@ -31,6 +31,7 @@ public class SavingsAccount extends BankAccount implements JointAccount, Automat
         return this.getBalance() >= value;
     }
 
+    @Override
     public void getData()
     {
         System.out.println("\nTITULAR: " + this.getOwner().getName());
