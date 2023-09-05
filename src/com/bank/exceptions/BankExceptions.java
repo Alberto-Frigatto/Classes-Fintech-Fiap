@@ -6,13 +6,13 @@ public class BankExceptions
     {
         public BankException(String message)
         {
-            super(message);
+            super("\n" + message + "\n");
         }
     }
 
     static public class InvalidCnpjException extends BankException
     {
-        static String MESSAGE = "\nCNPJ do banco inválido\n";
+        static final String MESSAGE = "CNPJ do banco inválido";
 
         public InvalidCnpjException()
         {
@@ -22,7 +22,7 @@ public class BankExceptions
 
     static public class InvalidNameException extends BankException
     {
-        static String MESSAGE = "\nNome do banco inválido\n";
+        static final String MESSAGE = "Nome do banco inválido";
 
         public InvalidNameException()
         {
@@ -32,7 +32,7 @@ public class BankExceptions
 
     static public class InvalidNumberException extends BankException
     {
-        static String MESSAGE = "\nNúmero do banco inválido\n";
+        static final String MESSAGE = "Número do banco inválido";
 
         public InvalidNumberException()
         {
