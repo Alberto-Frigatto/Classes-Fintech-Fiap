@@ -1,6 +1,6 @@
 package com.legalPerson;
 
-public interface LegalPerson
+public class LegalPerson
 {
     static public boolean cnpjIsValid(String cnpj)
     {
