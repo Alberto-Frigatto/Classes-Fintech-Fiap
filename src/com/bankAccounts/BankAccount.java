@@ -106,6 +106,8 @@ public abstract class BankAccount
 
     abstract protected boolean transactionIsPossible(double value);
 
+    abstract public void getData();
+
     public void cancelAccount()
     {
         if (this.isActive)
