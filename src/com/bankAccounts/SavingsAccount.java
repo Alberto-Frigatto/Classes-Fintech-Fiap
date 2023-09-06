@@ -80,6 +80,12 @@ public class SavingsAccount extends BankAccount implements JointAccount, Automat
         this.automaticDebits.add(debit);
     }
 
+    public void includeAutomaticDebit(ArrayList<Debit> debits)
+    {
+        for (Debit debit : debits)
+            this.automaticDebits.add(debit);
+    }
+
     @Override
     public void payAutomaticDebits()
     {
