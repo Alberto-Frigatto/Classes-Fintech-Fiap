@@ -10,6 +10,7 @@ import com.services.exceptions.CardExceptions;
 import com.services.exceptions.ServiceExceptions.ServiceException;
 import com.services.Service;
 import com.bankAccounts.BankAccount;
+import com.bankAccounts.exceptions.BankAccountExceptions.InvalidTransactionException;
 import com.cardBrand.CardBrand;
 
 public abstract class Card extends Service
@@ -184,10 +185,14 @@ public abstract class Card extends Service
 
     public void payAnnualFee()
     {
-        BankAccount account = this.getBankAccount();
-        double accountBalance = account.getBalance();
-
-        account.setBalance(accountBalance - this.annualFee);
+        try
+        {
+            this.getBankAccount().draft(this.annualFee);
+        }
+        catch (InvalidTransactionException e)
+        {
+            System.err.println(e.getMessage());
+        }
     }
 
     public KindCard getKindCard()

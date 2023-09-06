@@ -2,6 +2,7 @@ package com.services;
 
 import com.bankAccounts.BankAccount;
 import com.bankAccounts.exceptions.BankAccountExceptions;
+import com.bankAccounts.exceptions.BankAccountExceptions.InvalidTransactionException;
 import com.services.exceptions.ServiceExceptions.ServiceException;
 import com.services.exceptions.LoanExceptions;
 
@@ -109,10 +110,14 @@ public class Loan extends Service
 
     public void payPortion()
     {
-        BankAccount account = this.getBankAccount();
-
-        double newBalance = account.getBalance() - this.portionValue;
-        account.setBalance(newBalance);
+        try
+        {
+            this.getBankAccount().draft(this.portionValue);
+        }
+        catch (InvalidTransactionException e)
+        {
+            System.err.println(e.getMessage());
+        }
     }
 
     public double getValue()

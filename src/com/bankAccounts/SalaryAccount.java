@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.bank.Bank;
 import com.bankAccounts.exceptions.SalaryAccountExceptions;
 import com.bankAccounts.exceptions.BankAccountExceptions.BankAccountException;
+import com.bankAccounts.exceptions.BankAccountExceptions.InvalidTransactionException;
 import com.client.Client;
 import com.company.Company;
 import com.debit.AutomaticDebit;
@@ -103,7 +104,14 @@ public class SalaryAccount extends BankAccount implements AutomaticDebit
         for (Debit automaticDebit : this.automaticDebits)
             totalValue += automaticDebit.getValue();
 
-        this.setBalance(this.getBalance() - totalValue);
+        try
+        {
+            this.draft(totalValue);
+        }
+        catch (InvalidTransactionException e)
+        {
+            System.err.println(e.getMessage());
+        }
     }
 
     @Override

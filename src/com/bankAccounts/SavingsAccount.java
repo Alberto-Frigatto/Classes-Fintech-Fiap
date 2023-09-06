@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import com.bank.Bank;
 import com.bankAccounts.exceptions.BankAccountExceptions;
 import com.bankAccounts.exceptions.BankAccountExceptions.BankAccountException;
+import com.bankAccounts.exceptions.BankAccountExceptions.InvalidTransactionException;
 import com.client.Client;
 import com.client.PhysicalClient;
 import com.debit.AutomaticDebit;
@@ -87,7 +88,14 @@ public class SavingsAccount extends BankAccount implements JointAccount, Automat
         for (Debit automaticDebit : this.automaticDebits)
             totalValue += automaticDebit.getValue();
 
-        this.setBalance(this.getBalance() - totalValue);
+        try
+        {
+            this.draft(totalValue);
+        }
+        catch (InvalidTransactionException e)
+        {
+            System.err.println(e.getMessage());
+        }
     }
 
     public ArrayList<Client> getOwners()
