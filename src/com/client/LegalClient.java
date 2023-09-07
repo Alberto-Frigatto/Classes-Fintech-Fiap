@@ -10,6 +10,7 @@ public class LegalClient extends Client
 
     public LegalClient(
         String name,
+        String cep,
         String address,
         String phone1,
         String phone2,
@@ -18,7 +19,7 @@ public class LegalClient extends Client
         String cnpj
     ) throws ClientException
     {
-        super(name, address, phone1, phone2, email, password, Client.KindPerson.PJ);
+        super(name, cep, address, phone1, phone2, email, password, Client.KindPerson.PJ);
 
         this.cnpj = cnpj.strip();
 

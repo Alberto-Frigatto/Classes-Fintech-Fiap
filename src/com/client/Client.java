@@ -11,6 +11,7 @@ import com.client.exceptions.ClientExceptions.ClientException;
 public abstract class Client
 {
     private String name;
+    private String cep;
     private String address;
     private String phone1;
     private String phone2;
@@ -21,6 +22,7 @@ public abstract class Client
 
     public Client(
         String name,
+        String cep,
         String address,
         String phone1,
         String phone2,
@@ -30,6 +32,7 @@ public abstract class Client
     ) throws ClientException
     {
         this.name = name.strip();
+        this.cep = cep.strip();
         this.address = address.strip();
         this.phone1 = phone1.strip();
         this.phone2 = phone2 != null ? phone2.strip() : phone2;
@@ -38,6 +41,7 @@ public abstract class Client
         this.kindPerson = kindPerson;
 
         this.validateName();
+        this.validateCep();
         this.validateAddress();
         this.vaidatePhone1();
         this.validateEmail();
@@ -62,6 +66,26 @@ public abstract class Client
     private boolean nameIsValid()
     {
         return this.name instanceof String && !this.name.isEmpty() && this.name.length() <= 70 && this.name.matches("^[^0-9]*$");
+    }
+
+    private void validateCep() throws ClientExceptions.InvalidCepException
+    {
+        if (!this.cepIsValid())
+            throw new ClientExceptions.InvalidCepException();
+    }
+
+    private boolean cepIsValid()
+    {
+        int cepLength = 8;
+
+        if (this.cep.isEmpty() || this.cep.length() != cepLength)
+            return false;
+
+        for (char c : this.cep.toCharArray())
+            if (!Character.isDigit(c))
+                return false;
+
+        return true;
     }
 
     private void validateAddress() throws ClientExceptions.InvalidAddressException

@@ -12,6 +12,7 @@ public class PhysicalClient extends Client
 
     public PhysicalClient(
         String name,
+        String cep,
         String address,
         String phone1,
         String phone2,
@@ -21,7 +22,7 @@ public class PhysicalClient extends Client
         String birthDate
     ) throws ClientException
     {
-        super(name, address, phone1, phone2, email, password, Client.KindPerson.PF);
+        super(name, cep, address, phone1, phone2, email, password, Client.KindPerson.PF);
 
         this.cpf = cpf.strip();
 

@@ -20,6 +20,16 @@ public class ClientExceptions
         }
     }
 
+    public static class InvalidCepException extends ClientException
+    {
+        static final String MESSAGE = "CEP inválido";
+
+        public InvalidCepException()
+        {
+            super(MESSAGE);
+        }
+    }
+
     public static class InvalidAddressException extends ClientException
     {
         static final String MESSAGE = "Endereço inválido";
