@@ -9,6 +9,15 @@
 
 ## Adriano Lombardi
 
+<img
+    src='./img/adriano.png'
+    width='130'
+/>
+
+adriano.lombardi@yahoo.com.br
+
+[Linkedin](http://linkedin.com/in/adriano-lombardi-a21a3719)
+
 <br/>
 
 ## Alberto Frigatto de Andrade Ferreira
