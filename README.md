@@ -37,6 +37,17 @@ albertofrigatto.comercial@gmail.com
 
 ## Danilo Fernando de Paula e Silva
 
+<img
+    src='./img/danilo.png'
+    width='130'
+/>
+
+danilo.bossanova@hotmail.com
+
+[Linkedin](https://www.linkedin.com/in/danilo-fernando-3a4a49212/)
+
+[GitHub](https://github.com/danilobossanova)
+
 <br/>
 
 ## Gustavo Rodrigues Lopes
